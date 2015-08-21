@@ -1,0 +1,21 @@
+{
+  "name": "mesour/nette-bridges",
+  "description": "Mesour Nette Bridges.",
+  "license": ["BSD-3-Clause","GPL-3.0"],
+  "keywords": ["components","mesour","nette","nette bridges"],
+  "homepage": "http://components.mesour.com",
+  "authors": [{
+      "name": "Matouš Němec",
+      "homepage": "http://mesour.com"
+  }],
+  "require": {
+    "php": ">=5.4.0",
+    "mesour/components": "dev-master"
+  },
+  "require-dev": {
+    "tracy/tracy": "~2.3"
+  },
+  "autoload": {
+    "classmap": ["src/"]
+  }
+}
