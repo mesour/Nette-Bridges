@@ -15,8 +15,6 @@ use Mesour\Components;
 
 /**
  * @author Matouš Němec <matous.nemec@mesour.com>
- *
- * @property-read Link $link
  */
 class Url extends Components\Link\Url
 {
