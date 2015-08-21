@@ -1,6 +1,6 @@
 # Mesour Nette Bridges
 
-Simple component model
+Nette bridges for session, link and application.
 
 - [Documentation](http://components.mesour.com)
 - [Author](http://mesour.com)
