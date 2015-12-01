@@ -9,9 +9,9 @@
 
 namespace Mesour\Bridges\Nette;
 
-use Mesour\UI\Application;
-use Nette\Application\LinkGenerator;
+use Mesour\UI;
 use Nette\Http\Session;
+use Nette\Application\Application;
 
 
 /**
@@ -25,14 +25,15 @@ class ApplicationFactory
     /**
      * @param $name
      * @param Session $session
-     * @param LinkGenerator $linkGenerator
-     * @return Application
+     * @param Application $netteApplication
+     * @return UI\Application
+     * @throws \Mesour\Components\BadStateException
      */
-    static public function createApplication($name, Session $session, LinkGenerator $linkGenerator)
+    static public function createApplication($name, Session $session, Application $netteApplication)
     {
-        $application = new Application($name);
+        $application = new UI\Application($name);
         $application->setSession(new \Mesour\Bridges\Nette\Session($session));
-        $application->setLink(new Link($linkGenerator));
+        $application->setLink(new Link($netteApplication->getPresenter()));
         $application->setRequest($_REQUEST);
         $application->run();
         return $application;

@@ -32,7 +32,7 @@ class ApplicationExtension extends CompilerExtension
 
         $builder->addDefinition($this->prefix('mesourApplication'))
             ->setFactory('Mesour\Bridges\Nette\ApplicationFactory::createApplication', [
-                $config['name'], '@session.session', '@application.linkGenerator'
+                $config['name'], '@session', '@application'
             ]);
     }
 

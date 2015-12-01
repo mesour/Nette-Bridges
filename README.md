@@ -9,8 +9,6 @@ Nette bridges for session, link and application.
 
 - With [Composer](https://getcomposer.org)
 
-        "require": {
-            "mesour/nette-bridges": "dev-master"
-        }
+        composer require mesour/nette-bridges
 
 - Or download source from [GitHub](https://github.com/mesour/nette-bridges/releases)

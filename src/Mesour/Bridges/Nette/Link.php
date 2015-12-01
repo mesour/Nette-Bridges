@@ -10,7 +10,8 @@
 namespace Mesour\Bridges\Nette;
 
 use Mesour\Components\Link\ILink;
-use Nette\Application\LinkGenerator;
+use Nette\Application\IPresenter;
+use Nette\Application\UI\Presenter;
 
 
 /**
@@ -20,18 +21,18 @@ class Link implements ILink
 {
 
     /**
-     * @var LinkGenerator
+     * @var IPresenter
      */
-    private $linkGenerator;
+    private $presenter;
 
-    public function __construct(LinkGenerator $linkGenerator)
+    public function __construct(Presenter $presenter)
     {
-        $this->linkGenerator = $linkGenerator;
+        $this->presenter = $presenter;
     }
 
     public function link($destination, $args = array())
     {
-        return $this->linkGenerator->link($destination, $args);
+        return $this->presenter->link($destination, $args);
     }
 
     public function create($destination, $args = array())
