@@ -9,7 +9,10 @@
 
 namespace Mesour\Bridges\Nette\DI;
 
+use App\Version2Module\Presenters\SubItemsPresenter;
+use Nette\Application\IPresenter;
 use Nette\DI\CompilerExtension;
+use Nette\PhpGenerator\ClassType;
 
 
 /**
@@ -32,7 +35,7 @@ class ApplicationExtension extends CompilerExtension
 
         $builder->addDefinition($this->prefix('mesourApplication'))
             ->setFactory('Mesour\Bridges\Nette\ApplicationFactory::createApplication', [
-                $config['name'], '@session', '@application'
+                $config['name'], '@session'
             ]);
     }
 

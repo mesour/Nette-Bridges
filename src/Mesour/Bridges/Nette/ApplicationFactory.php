@@ -10,6 +10,12 @@
 namespace Mesour\Bridges\Nette;
 
 use Mesour\UI;
+use Nette\Application\IPresenter;
+use Nette\Application\IPresenterFactory;
+use Nette\Application\PresenterFactory;
+use Nette\Application\Request;
+use Nette\Application\UI\Presenter;
+use Nette\DI\Container;
 use Nette\Http\Session;
 use Nette\Application\Application;
 
@@ -25,15 +31,13 @@ class ApplicationFactory
     /**
      * @param $name
      * @param Session $session
-     * @param Application $netteApplication
      * @return UI\Application
      * @throws \Mesour\Components\BadStateException
      */
-    static public function createApplication($name, Session $session, Application $netteApplication)
+    static public function createApplication($name, Session $session)
     {
         $application = new UI\Application($name);
         $application->setSession(new \Mesour\Bridges\Nette\Session($session));
-        $application->setLink(new Link($netteApplication->getPresenter()));
         $application->setRequest($_REQUEST);
         $application->run();
         return $application;
