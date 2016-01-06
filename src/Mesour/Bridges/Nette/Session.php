@@ -9,18 +9,14 @@
 
 namespace Mesour\Bridges\Nette;
 
-use Mesour\Components\Helper;
-use Mesour\Components\InvalidArgumentException;
-use Mesour\Components\Session\ISession;
-use Mesour\Components\Session\ISessionSection;
+use Mesour;
 use Nette\Http;
-
 
 
 /**
  * @author Matouš Němec <matous.nemec@mesour.com>
  */
-class Session implements ISession
+class Session implements Mesour\Components\Session\ISession
 {
 
     /**
@@ -28,7 +24,7 @@ class Session implements ISession
      */
     private $session;
 
-    private $sections = array();
+    private $sections = [];
 
     public function __construct(Http\Session $session)
     {
@@ -37,13 +33,13 @@ class Session implements ISession
 
     /**
      * @param $section
-     * @return ISessionSection
-     * @throws InvalidArgumentException
+     * @return Mesour\Components\Session\ISessionSection
+     * @throws Mesour\InvalidArgumentException
      */
     public function getSection($section)
     {
-        if (!Helper::validateKeyName($section)) {
-            throw new InvalidArgumentException('SessionSection name must be integer or string, ' . gettype($section) . ' given.');
+        if (!Mesour\Components\Utils\Helpers::validateKeyName($section)) {
+            throw new Mesour\InvalidArgumentException('SessionSection name must be integer or string, ' . gettype($section) . ' given.');
         }
         $this->sections[$section] = $section;
         return new SessionSection($this->session->getSection($section));

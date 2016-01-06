@@ -9,7 +9,7 @@
 
 namespace Mesour\Bridges\Nette;
 
-use Mesour\Components\Link\ILink;
+use Mesour;
 use Nette\Application\IPresenter;
 use Nette\Application\UI\Presenter;
 
@@ -17,7 +17,7 @@ use Nette\Application\UI\Presenter;
 /**
  * @author Matouš Němec <matous.nemec@mesour.com>
  */
-class Link implements ILink
+class Link implements Mesour\Components\Link\ILink
 {
 
     /**

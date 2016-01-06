@@ -9,14 +9,14 @@
 
 namespace Mesour\Bridges\Nette;
 
-use Mesour\Components;
+use Mesour;
 
 
 
 /**
  * @author Matouš Němec <matous.nemec@mesour.com>
  */
-class Url extends Components\Link\Url
+class Url extends Mesour\Components\Link\Url
 {
     /** @var Link */
     protected $link;

@@ -9,7 +9,6 @@
 
 namespace Mesour\Bridges\Nette\DI;
 
-use App\Version2Module\Presenters\SubItemsPresenter;
 use Nette\Application\IPresenter;
 use Nette\DI\CompilerExtension;
 use Nette\PhpGenerator\ClassType;

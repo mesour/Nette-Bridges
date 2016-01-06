@@ -18,6 +18,7 @@ use Nette\Application\UI\Presenter;
 use Nette\DI\Container;
 use Nette\Http\Session;
 use Nette\Application\Application;
+use Mesour;
 
 
 /**
@@ -32,12 +33,12 @@ class ApplicationFactory
      * @param $name
      * @param Session $session
      * @return UI\Application
-     * @throws \Mesour\Components\BadStateException
+     * @throws Mesour\InvalidStateException
      */
     static public function createApplication($name, Session $session)
     {
         $application = new UI\Application($name);
-        $application->setSession(new \Mesour\Bridges\Nette\Session($session));
+        $application->setSession(new Mesour\Bridges\Nette\Session($session));
         $application->setRequest($_REQUEST);
         $application->run();
         return $application;
