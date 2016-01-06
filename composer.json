@@ -10,11 +10,12 @@
   }],
   "require": {
     "php": ">=5.4.0",
-    "mesour/components": "dev-master"
+    "mesour/components": "@dev"
   },
   "require-dev": {
     "tracy/tracy": "~2.3"
   },
+  "minimum-stability": "dev",
   "autoload": {
     "classmap": ["src/"]
   }
