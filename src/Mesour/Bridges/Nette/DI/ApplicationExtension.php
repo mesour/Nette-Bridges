@@ -9,9 +9,7 @@
 
 namespace Mesour\Bridges\Nette\DI;
 
-use Nette\Application\IPresenter;
 use Nette\DI\CompilerExtension;
-use Nette\PhpGenerator\ClassType;
 
 
 /**
