@@ -10,8 +10,7 @@
 namespace Mesour\Bridges\Nette;
 
 use Mesour;
-
-
+use Nette\Application\UI\PresenterComponent;
 
 /**
  * @author Matouš Němec <matous.nemec@mesour.com>
@@ -21,9 +20,16 @@ class Url extends Mesour\Components\Link\Url
     /** @var Link */
     protected $link;
 
+    protected $presenterComponent = null;
+
+    public function setPresenterComponent(PresenterComponent $presenterComponent)
+    {
+        $this->presenterComponent = $presenterComponent;
+    }
+
     protected function createUrl()
     {
-        return $this->link->link($this->destination, $this->args);
+        return $this->link->link($this->destination, $this->args, $this->presenterComponent);
     }
 
 }
