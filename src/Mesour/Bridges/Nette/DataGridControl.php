@@ -48,9 +48,11 @@ class DataGridControl extends UI\Control
 
             $this->mesourApplication->setLink(new Mesour\Bridges\Nette\Link($this));
 
-            $this->grid = $this->mesourApplication[$this->getName()] = isset($this->mesourApplication[$this->getName()])
-                ? $this->mesourApplication[$this->getName()]
-                : new Mesour\UI\DataGrid($this->getName());
+            if (isset($this->mesourApplication[$this->getName()])) {
+                $this->mesourApplication->removeComponent($this->getName());
+            }
+
+            $this->grid = new Mesour\UI\DataGrid($this->getName(), $this->mesourApplication);
         }
     }
 
