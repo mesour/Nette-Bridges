@@ -10,7 +10,7 @@
   }],
   "require": {
     "php": ">=5.5.0",
-    "mesour/components": "3.0.*@beta"
+    "mesour/components": "3.1.*@beta"
   },
   "minimum-stability": "beta",
   "autoload": {
